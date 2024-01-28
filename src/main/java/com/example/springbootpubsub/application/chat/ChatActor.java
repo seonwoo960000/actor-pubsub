@@ -1,10 +1,8 @@
-package com.example.springbootpubsub.application;
+package com.example.springbootpubsub.application.chat;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
-import com.example.springbootpubsub.application.message.ChatMessage;
 
 import akka.actor.UntypedActor;
 

@@ -1,8 +1,8 @@
-package com.example.springbootpubsub.application;
+package com.example.springbootpubsub.application.chat;
 
 import org.springframework.stereotype.Service;
 
-import com.example.springbootpubsub.application.message.ChatMessage;
+import com.example.springbootpubsub.application.chat.ChatMessage;
 
 @Service
 public class ChatService {

@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.springbootpubsub.application.message.ChatMessage;
-import com.example.springbootpubsub.application.message.MessageDispatcher;
+import com.example.springbootpubsub.application.chat.ChatMessage;
+import com.example.springbootpubsub.application.MessageDispatcher;
 
 @RestController
 @RequestMapping("/api/v1/chat")

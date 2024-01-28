@@ -1,10 +1,11 @@
-package com.example.springbootpubsub.application.message;
+package com.example.springbootpubsub.application;
 
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.stereotype.Component;
 
 import com.example.springbootpubsub.adapter.framework.SpringExtension;
+import com.example.springbootpubsub.application.message.Message;
 
 import akka.actor.ActorSystem;
 import akka.pattern.Patterns;
