@@ -1,27 +1,31 @@
 spring:
   profiles:
-    active: server-1
+    active: ${SPRING_PROFILES_ACTIVE:server-1}
 
 ---
 
 spring:
-  profiles:
-    default: server-1
+  config:
+    activate:
+      on-profile: server-1
+
 server:
   port: 8080
 
 ---
 
 spring:
-  profiles:
-    default: server-2
+  config:
+    activate:
+      on-profile: server-2
 server:
   port: 8081
 
 ---
 
 spring:
-  profiles:
-    default: server-3
+  config:
+    activate:
+      on-profile: server-3
 server:
   port: 8082
