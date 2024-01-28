@@ -8,6 +8,7 @@ import com.example.springbootpubsub.application.message.ChatMessage;
 public class ChatService {
 
     public void send(ChatMessage message) {
-        System.out.println("Message: " + message);
+        System.out.println("Message received");
     }
 }
+

@@ -11,13 +11,19 @@ import akka.actor.ActorSystem;
 @Configuration
 public class SpringConfiguration {
 
-    @Autowired
-    private ApplicationContext applicationContext;
+    private final ApplicationContext applicationContext;
+
+    private final SpringExtension springExtension;
+
+    public SpringConfiguration(ApplicationContext applicationContext, SpringExtension springExtension) {
+        this.applicationContext = applicationContext;
+        this.springExtension = springExtension;
+    }
 
     @Bean
     public ActorSystem actorSystem() {
         ActorSystem system = ActorSystem.create("akka-spring-demo");
-        SpringExtension.SPRING_EXTENSION_PROVIDER.get(system).initialize(applicationContext);
+        springExtension.get(system).initialize(applicationContext);
         return system;
     }
 }
