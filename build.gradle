@@ -15,11 +15,15 @@ repositories {
     mavenCentral()
 }
 
+// https://github.com/Romeh/spring-boot-akka-event-sourcing-starter/blob/master/springboot-akka-event-sourcing-starter/pom.xml
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'com.typesafe.akka:akka-actor_2.11:2.4.3'
-    implementation 'com.typesafe.akka:akka-slf4j_2.11:2.4.3'
+    implementation 'com.typesafe.akka:akka-actor-typed_2.13:2.6.7'
+    implementation 'com.typesafe.akka:akka-stream-typed_2.13:2.6.7'
+    implementation 'com.lightbend.akka:akka-stream-alpakka-spring-web_2.13:2.0.0'
+    implementation 'org.scala-lang:scala-library:2.13.2'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
