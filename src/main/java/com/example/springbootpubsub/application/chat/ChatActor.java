@@ -1,14 +1,11 @@
 package com.example.springbootpubsub.application.chat;
 
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+import com.example.springbootpubsub.application.Actor;
 
-import akka.actor.UntypedActor;
+import akka.actor.AbstractLoggingActor;
 
-@Component
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-public class ChatActor extends UntypedActor {
+@Actor
+public class ChatActor extends AbstractLoggingActor {
 
     private final ChatService chatService;
 
@@ -17,11 +14,10 @@ public class ChatActor extends UntypedActor {
     }
 
     @Override
-    public void onReceive(Object message) {
-        if (message instanceof ChatMessage) {
-            chatService.send((ChatMessage) message);
-        } else {
-            unhandled(message);
-        }
+    public Receive createReceive() {
+        return receiveBuilder()
+                .match(ChatMessage.class, chatService::send)
+                .matchAny(this::unhandled)
+                .build();
     }
 }

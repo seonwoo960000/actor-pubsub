@@ -19,7 +19,10 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'com.typesafe.akka:akka-actor_2.12:2.5.0'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'com.typesafe.akka:akka-actor_2.12:2.6.0'
+    implementation 'com.typesafe.akka:akka-cluster_2.12:2.6.0'
+    implementation 'com.typesafe.akka:akka-cluster-sharding_2.12:2.6.0'
     implementation 'net.jodah:expiringmap:0.5.9'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
