@@ -1,18 +1,18 @@
-package com.example.springbootpubsub.adapter.framework.akka;
+package com.example.springbootpubsub.adapter.framework;
 
 import org.springframework.context.ApplicationContext;
 
 import akka.actor.Actor;
 import akka.actor.IndirectActorProducer;
 
-public class AkkaActorProducer implements IndirectActorProducer {
+// Instead of direct instantiation of actors, always retrieve an actor instance from the Spring's ApplicationContext
+public class SpringActorProducer implements IndirectActorProducer {
 
-    private final ApplicationContext applicationContext;
+    private ApplicationContext applicationContext;
 
-    private final String beanActorName;
+    private String beanActorName;
 
-    public AkkaActorProducer(ApplicationContext applicationContext,
-                             String beanActorName) {
+    public SpringActorProducer(ApplicationContext applicationContext, String beanActorName) {
         this.applicationContext = applicationContext;
         this.beanActorName = beanActorName;
     }
