@@ -1,6 +1,12 @@
 spring:
   profiles:
     active: server-1
+
+---
+
+spring:
+  profiles:
+    default: server-1
 server:
   port: 8080
 
@@ -8,14 +14,14 @@ server:
 
 spring:
   profiles:
-    active: server-2
+    default: server-2
 server:
-    port: 8081
+  port: 8081
 
 ---
 
 spring:
   profiles:
-    active: server-3
+    default: server-3
 server:
   port: 8082
